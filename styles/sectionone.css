@@ -1,0 +1,117 @@
+section[class="one"] {
+    display: grid;
+    grid-template-columns: 40cqw 60cqw;
+    height: 40cqh;
+    max-height: 360px;
+    background: white;
+    overflow-x: clip;
+
+}
+
+section[class="one-left"] {
+    width: 80%;
+    height: 100%;
+    margin-left: 10%;
+    display: grid;
+    place-content: center;
+    color: black;
+    z-index: 2;
+}
+
+section[class="one-left"] h1 {
+    font-size: xx-large;
+}
+
+section[class="one-image"] {
+    display: grid;
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+}
+
+section[class="one-image"]::after {
+    content: url(../images/image-mockups.png);
+    position: absolute;
+    top: -20cqh;
+    right: -12.5cqw;
+    transform: scale(80%);
+}
+
+section[class="one-image"] svg {
+    width: 100%;
+    height: 100%;
+    transform: scale(320%) translate(2%, -10%);
+}
+
+svg[class="bg-intro-mobile"] {
+    display: none;
+}
+
+@container (inline-size < 1281px) {
+    section[class="one-image"]::after {
+        top: -28cqh;
+        right: -16cqw;
+        transform: scale(70%);
+    }
+
+    section[class="one-image"] svg {
+        transform: scale(172%) translate(1%, -20%);
+        transform: scale(221%) translate(15%, -19%);
+    }
+}
+
+@container (inline-size < 1000px) {
+    section[class="one"] {
+        grid-template-columns: 1fr;
+        grid-template-rows: 40cqh 40cqh;
+        height: 80cqh;
+        max-height: unset;
+    }
+
+    section[class="one-left"] {
+        order: 2;
+        display: grid;
+        place-items: center;
+        text-align: center;
+        z-index: 3;
+    }
+
+    section[class="one-image"] {
+        order: 1;
+        overflow-y: clip;
+    }
+
+    section[class="one-image"]::after {
+        top: -41cqh;
+        right: -43%;
+        transform: scale(55%);
+    }
+}
+
+@container (386px < inline-size < 1000px) {
+
+    section[class="one-image"]::after {
+        top: -41cqh;
+        right: -43%;
+        transform: scale(55%);
+    }
+}
+
+@container (inline-size < 386px) {
+    section[class="one-image"]::after {
+        top: -51cqh;
+        right: -58%;
+        transform: scale(45%);
+    }
+
+    section[class="one-image"]::after {
+        top: -45cqh;
+        right: -52%;
+        transform: scale(45%);
+    }
+
+    section[class="one-image"] svg {
+        transform: scale(200%) translate(15%, -25%);
+    }
+}

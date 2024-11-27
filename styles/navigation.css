@@ -1,0 +1,111 @@
+nav {
+    display: grid;
+    align-content: center;
+    width: 100cqw;
+    height: 50px;
+    grid-auto-flow: column;
+    grid-template-columns: repeat(10, 10%);
+    justify-content: space-between;
+    place-items: center;
+    align-self: baseline;
+    background: white;
+    color: black;
+    z-index: 3;
+    padding-bottom: 5px;
+}
+
+section[class="logo"] {
+    height: 50px;
+    grid-column: 2 / 4;
+}
+
+section[class="logo"] svg {
+    width: 100%;
+    height: 100%;
+}
+
+nav menu {
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+    height: 100%;
+    column-gap: 10px;
+    grid-column: 4 / 8;
+    color:var(--dark-blue);
+    font-weight: 500;
+}
+
+menu li {
+    list-style: none;
+    place-content: center;
+    height: 100%;
+    cursor: pointer;
+}
+
+menu li:hover {
+    border-bottom: 2px solid var(--lime-green);
+    margin-top: 2px;
+}
+
+button[id="request-invite"] {
+    grid-column: 9 / 10;
+}
+
+label[for="close-menu"],
+label[for="open-menu"],
+input[name="mobile-menu"] {
+    display: none;
+}
+@container main (inline-size<1000px) {
+
+    button[id="request-invite"],
+    nav menu {
+        display: none;
+    }
+    nav{
+        position: relative;
+    }
+    nav:has(input[id="close-menu"]:checked) {
+        label[for="open-menu"] {
+            display: grid;
+            grid-column: 9 / 10;
+            width: 100%;
+            height: 100%;
+        }
+
+        label[for="open-menu"] svg {
+            height: 50px;
+            width: 100%;
+        }
+    }
+
+    nav:has(input[id="open-menu"]:checked) {
+        label[for="close-menu"] {
+            display: grid;
+            grid-column: 9 / 10;
+            width: 100%;
+            height: 100%;
+        }
+
+        label[for="close-menu"] svg {
+            height: 50px;
+            width: 100%;
+        }
+        menu {
+            display: grid;
+            position: absolute;
+            grid-auto-flow: row;
+            top: 50px;
+            background: white;
+            height: 100px;
+            padding: 50% 10% 50% 10%;
+            align-content: space-around;
+            gap: 20%;
+            width: 80cqw;
+        }
+        menu li {
+            text-align: center;
+        }
+
+    }
+}

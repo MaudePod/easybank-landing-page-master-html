@@ -1,0 +1,65 @@
+section[class="two"] {
+    display: grid;
+    background: var(--light-grayish-blue);
+    padding-bottom: 50px;
+    gap: 50px;
+}
+
+section[class="why-chose-easybank"] {
+    width: 80%;
+    margin-left: 10%;
+    align-self: center;
+}
+
+section[class="why-chose-easybank"] p {
+    width: 60%;
+}
+
+section[class="features"] {
+    display: grid;
+    width: 80%;
+    grid-template-columns: repeat(4, 1fr);
+    margin: auto;
+    column-gap: 20px;
+}
+
+section[class="features-card-image"] {
+    width: 72px;
+}
+
+section[class="features-card-image"] svg {
+    height: 100%;
+    width: 100%;
+}
+
+@container (inline-size < 1000px) {
+    section[class="two"] {
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr;
+    }
+
+    section[class="why-chose-easybank"] {
+        width: 100%;
+        text-align: center;
+        display: grid;
+        place-items: center;
+        margin: 0;
+    }
+
+    section[class="why-chose-easybank"] p {
+        width: 80%;
+    }
+
+    section[class="features"] {
+        width: 100%;
+        grid-template-columns: 1fr;
+        place-items: center;
+        text-align: center;
+    }
+
+    section[class="features-card"] {
+        display: grid;
+        place-items: center;
+        width: 80%;
+    }
+}
